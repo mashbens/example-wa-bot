@@ -1,0 +1,20 @@
+{
+  "0": {
+    "id": "0",
+    "message": "Silakan pilih layanan:",
+    "options": [
+      { "label": "Produk PNM", "value": "1", "next": "1" },
+      { "label": "Tentang PNM", "value": "2", "next": "2" }
+    ]
+  },
+  "1": {
+    "id": "1",
+    "message": "Produk PNM meliputi pembiayaan mikro, ULaMM, dan Mekaar.",
+    "options": []
+  },
+  "2": {
+    "id": "2",
+    "message": "PNM adalah perusahaan pembiayaan milik BUMN untuk UMK.",
+    "options": []
+  }
+}
