@@ -1,20 +1,353 @@
 {
-  "0": {
+    "_id": "main",
     "id": "0",
-    "message": "Silakan pilih layanan:",
+    "name": "menu",
+    "type": "options",
+    "message": "Selamat datang Bapak/Ibu {Customer_name}. Silakan pilih kategori dibawah ini atau ketik pertanyaan yang diinginkan!",
     "options": [
-      { "label": "Produk PNM", "value": "1", "next": "1" },
-      { "label": "Tentang PNM", "value": "2", "next": "2" }
-    ]
-  },
-  "1": {
-    "id": "1",
-    "message": "Produk PNM meliputi pembiayaan mikro, ULaMM, dan Mekaar.",
-    "options": []
-  },
-  "2": {
-    "id": "2",
-    "message": "PNM adalah perusahaan pembiayaan milik BUMN untuk UMK.",
-    "options": []
-  }
+        {
+            "label": "Produk PNM",
+            "value": "Produk PNM",
+            "next": "Produk PNM"
+        },
+        {
+            "label": "Tentang PNM",
+            "value": "Tentang PNM",
+            "next": "Tentang PNM"
+        },
+        {
+            "label": "PNM Mendengar",
+            "value": "PNM Mendengar",
+            "next": "PNM Mendengar"
+        },
+        {
+            "label": "Tentang Aplikasi",
+            "value": "Tentang Aplikasi",
+            "next": "Tentang Aplikasi"
+        },
+        {
+            "label": "Masa Sewa Motor",
+            "value": "Masa Sewa Motor",
+            "next": "Masa Sewa Motor"
+        },
+        {
+            "label": "Cek Pasang Internet",
+            "value": "Cek Pasang Internet",
+            "next": "Cek Pasang Internet"
+        },
+        {
+            "label": "Isi Kuota Internet",
+            "value": "Isi Kuota Internet",
+            "next": "Isi Kuota Internet"
+        }
+    ],
+    "children": {
+        "Produk PNM": {
+            "id": "Produk PNM",
+            "name": "Produk PNM",
+            "type": "options",
+            "message": "Silakan pilih produk PNM yang diinginkan di bawah ini:",
+            "options": [
+                {
+                    "label": "PNM ULaMM",
+                    "value": "PNM ULaMM",
+                    "next": "PNM ULaMM"
+                },
+                {
+                    "label": "PNM Mekaar",
+                    "value": "PNM Mekaar",
+                    "next": "PNM Mekaar"
+                },
+                {
+                    "label": "Program Pengembang",
+                    "value": "Program Pengembang",
+                    "next": "Program Pengembang"
+                },
+                {
+                    "label": "Jasa Manajemen",
+                    "value": "Jasa Manajemen",
+                    "next": "Jasa Manajemen"
+                }
+            ],
+            "children": {
+                "PNM ULaMM": {
+                    "id": "PNM ULaMM",
+                    "name": "PNM ULaMM",
+                    "type": "text",
+                    "followup": true,
+                    "message": "PNM ULaMM (Unit Layanan Modal Mikro) merupakan layanan pembiayaan dan pendampingan usaha kepada pelaku usaha mikro dan kecil (UMK).\n\nSelain program konvensional, PNM juga menawarkan program syariah dengan nama product PNM ULaMM Syariah.\n\nSilahkan klink link berikut untuk mengetahui informasi lebih detail https://www.pnm.co.id/business/pnm-ulamm\n"
+                },
+                "PNM Mekaar": {
+                    "id": "PNM Mekaar",
+                    "name": "PNM Mekaar",
+                    "type": "text",
+                    "followup": true,
+                    "message": "PNM Membina Ekonomi Keluarga Sejahtera (PNM Mekaar) merupakan layanan permodalan berbasis kelompok yang diperuntukan bagi perempuan prasejahtera pelaku usaha ultra mikro, baik yang ingin memulai usaha maupun mengembangkan usaha.\n\nSelain program konvensional, PNM juga menawarkan program syariah dengan nama product PNM Mekaar Syariah.\n\nSilahkan klink link berikut untuk mengetahui informasi lebih detail\nhttps://www.pnm.co.id/business/pnm-mekaar"
+                },
+                "Program Pengembang": {
+                    "id": "Program Pengembang",
+                    "name": "Program Pengembang",
+                    "type": "text",
+                    "followup": true,
+                    "message": "PNM memiliki program Pengembangan Kapasitas Usaha dan Pengembangan Kelompok (PKU-PK) yang bertujuan untuk memberikan pendampingan serta pembinaan kepada para pelaku usaha ultra mikro, mikro dan kecil di Indonesia.\n\nSilahkan klink link berikut untuk mengetahui informasi lebih detail \nhttps://www.pnm.co.id/business/program-pengembangan-kapasitas-usaha"
+                },
+                "Jasa Manajemen": {
+                    "id": "Jasa Manajemen",
+                    "name": "Jasa Manajemen",
+                    "type": "text",
+                    "followup": true,
+                    "message": "Jasa Manajemen merupakan layanan yang bertujuan untuk memperkuat lembaga keuangan dan sektor riil. Selain itu Jasa Manajemen PNM memiliki program Kemitraan berupa penyaluran dana kemitraan yang ditujukan kepada pelaku UMKM.\n\nSilahkan klink link berikut untuk mengetahui informasi lebih detail \nhttps://www.pnm.co.id/business/jasa-manajemen"
+                }
+            }
+        },
+        "Tentang PNM": {
+            "id": "Tentang PNM",
+            "name": "Tentang PNM",
+            "type": "text",
+            "followup": true,
+            "message": "PT Permodalan Nasional Madani atau PNM, hadir sebagai solusi peningkatan kesejahteraan melalui akses permodalan, pendampingan dan program peningkatan kapasitas para pelaku usaha.\n\nPNM memiliki visi “Menjadi lembaga pembiayaan terkemuka dalam meningkatkan nilai tambah secara berkelanjutan bagi Usaha Mikro, Kecil, Menengah dan Koperasi (UMKMK) yang berlandaskan prinsip-prinsip Good Corporate Governance (GCG) atau Tata Kelola Perusahaan yang Baik. ”\n\nDan PNM memiliki misi:\n\n1. Menjalankan berbagai upaya, yang terkait dengan operasional perusahaan, untuk meningkatkan kelayakan usaha dan kemampuan wirausaha para pelaku bisnis UMKMK.\n\n2. Membantu pelaku UMKMK untuk mendapatkan dan kemudian meningkatkan akses pembiayaan UMKMK kepada lembaga keuangan baik bank maupun non-bank yang pada akhirnya akan meningkatkan kontribusi mereka dalam perluasan lapangan kerja dan peningkatan kesejahteraan masyarakat.\n\n3. Meningkatkan kreatifitas dan produktivitas karyawan untuk mencapai kinerja terbaik dalam usaha pengembangan sektor UMKMK.\n\nUntuk menghubungi PNM, silahkan akses Call Center: 1500 - 654 / Email: info@pnm.co.id \n\nAnda juga dapat mengakses berita terbaru PNM melalui portal berikut \n\n\nBerita \nhttps://www.pnm.co.id/news \n\nMedia Sosial \nhttps://www.pnm.co.id/pages/widgets \n"
+        },
+        "PNM Mendengar": {
+            "id": "PNM Mendengar",
+            "name": "PNM Mendengar",
+            "type": "options",
+            "message": "Slahkan pilih layanan:",
+            "options": [
+                {
+                    "label": "Infrastruktur",
+                    "value": "Infrastruktur",
+                    "next": "Infrastruktur"
+                },
+                {
+                    "label": "Oprational Kantor",
+                    "value": "Oprational Kantor",
+                    "next": "Oprational Kantor"
+                },
+                {
+                    "label": "SDM",
+                    "value": "SDM",
+                    "next": "SDM"
+                }
+            ],
+            "children": {
+                "Infrastruktur": {
+                    "id": "Infrastruktur",
+                    "name": "Infrastruktur",
+                    "type": "options",
+                    "message": "Silakan pilih layanan:",
+                    "options": [
+                        {
+                            "label": "Motor",
+                            "value": "Motor",
+                            "next": "Motor"
+                        },
+                        {
+                            "label": "PPI Cabang",
+                            "value": "PPI Cabang",
+                            "next": "PPI Cabang"
+                        },
+                        {
+                            "label": "PPI Pusat",
+                            "value": "PPI Pusat",
+                            "next": "PPI Pusat"
+                        },
+                        {
+                            "label": "Renovasi",
+                            "value": "Renovasi",
+                            "next": "Renovasi"
+                        }
+                    ],
+                    "children": {
+                        "Motor": {
+                            "id": "Motor",
+                            "name": "Motor",
+                            "type": "text",
+                            "followup": true,
+                            "message": "Silakan ketik pilihan di bawah ini untuk memilih kategori yang Anda inginkan!\nKetik INFRA1 untuk Kendala service Ahhas\nKetik INFRA2 untuk CS MBM\nKetik INFRA3 untuk BPKB, STNK, dan Plat Motor\nKetik INFRA4 untuk Follow up pengajuan motor\n"
+                        },
+                        "PPI Cabang": {
+                            "id": "PPI Cabang",
+                            "name": "PPI Cabang",
+                            "type": "text",
+                            "followup": true,
+                            "message": "Silakan ketik pilihan di bawah ini untuk memilih kategori yang Anda inginkan!\nKetik INFRA5 untuk Pengajuan aset\nKetik INFRA6 untuk Tindak lanjut aset tidak terpakai\nKetik INFRA7 untuk Pengajuan pemasangan Indihome"
+                        },
+                        "PPI Pusat": {
+                            "id": "PPI Pusat",
+                            "name": "PPI Pusat",
+                            "type": "text",
+                            "followup": true,
+                            "message": "Silakan ketik pilihan di bawah ini untuk memilih kategori yang Anda inginkan!\nKetik INFRA8 untuk Pengajuan komputer\nKetik INFRA9 untuk Infrastruktur cabang baru\nKetik INFRA10 untuk Pengajuan slip tarik"
+                        },
+                        "Renovasi": {
+                            "id": "Renovasi",
+                            "name": "Renovasi",
+                            "type": "text",
+                            "followup": true,
+                            "message": "Silakan ketik pilihan di bawah ini untuk memilih kategori yang Anda inginkan!\nKetik INFRA11 untuk Renovasi atau rumah"
+                        }
+                    }
+                },
+                "Opertational Kantor": {
+                    "id": "Opertational Kantor",
+                    "name": "Oprational Kantor",
+                    "type": "options",
+                    "message": "Silakan pilih kategori di bawah ini!",
+                    "options": [
+                        {
+                            "label": "Jam Operasional",
+                            "value": "Jam Operasional",
+                            "next": "Jam Operasional"
+                        },
+                        {
+                            "label": "Dokumen",
+                            "value": "Dokumen",
+                            "next": "Dokumen"
+                        },
+                        {
+                            "label": "Pengajuan Dana",
+                            "value": "Pengajuan Dana",
+                            "next": "Pengajuan Dana"
+                        }
+                    ],
+                    "children": {
+                        "Jam Operasional": {
+                            "id": "Jam Operasional",
+                            "name": "Jam Operasional",
+                            "type": "text",
+                            "followup": true,
+                            "message": "Silakan ketik pilihan di bawah ini untuk memilih kategori yang Anda inginkan!\nKetik OPS1 untuk Keluhan jam kerja\nKetik OPS2 untuk Keluhan masuk sabtu\nKetik OPS3 untuk Keluhan masuk hari libur"
+                        },
+                        "Dokumen": {
+                            "id": "Dokumen",
+                            "name": "Dokumen",
+                            "type": "text",
+                            "followup": true,
+                            "message": "Silakan ketik pilihan di bawah ini untuk memilih kategori yang Anda inginkan!\nKetik OPS4 untuk Pengajuan update speciment, kendala surat tugas dan surat kuasa"
+                        },
+                        "Pengajuan Dana": {
+                            "id": "Pengajuan Dana",
+                            "name": "Pengajuan Dana",
+                            "type": "text",
+                            "followup": true,
+                            "message": "Silakan ketik pilihan di bawah ini untuk memilih kategori yang Anda inginkan!\nKetik OPS5 untuk Pengajuan reimburse dana transport pemindahan barang/kendaraan\nKetik OPS6 untuk Follow up pengajuan dana operasional cabang"
+                        }
+                    }
+                },
+                "SDM": {
+                    "id": "SDM",
+                    "name": "SDM",
+                    "type": "options",
+                    "message": "Silakan pilih kategori di bawah ini!",
+                    "options": [
+                        {
+                            "label": "Follow Up SDM",
+                            "value": "Follow Up SDM",
+                            "next": "Follow Up SDM"
+                        },
+                        {
+                            "label": "Keluhan Tim/Atasan",
+                            "value": "Keluhan Tim/Atasan",
+                            "next": "Keluhan Tim/Atasan"
+                        },
+                        {
+                            "label": "Lain-lain",
+                            "value": "Lain-lain",
+                            "next": "Lain-lain"
+                        }
+                    ],
+                    "children": {
+                        "Follow Up SDM": {
+                            "id": "Follow Up SDM",
+                            "name": "Follow Up SDM",
+                            "type": "text",
+                            "followup": true,
+                            "message": "Silakan ketik pilihan di bawah ini untuk memilih kategori yang Anda inginkan!\nKetik SDM1 untuk Informasi paklaring\nKetik SDM2 untuk Pengajuan ID card\nKetik SDM3 untuk Rejoin"
+                        },
+                        "Keluhan Tim/Atasan": {
+                            "id": "Keluhan Tim/Atasan",
+                            "name": "Keluhan Tim/Atasan",
+                            "type": "text",
+                            "followup": true,
+                            "message": "Silakan ketik pilihan di bawah ini untuk memilih kategori yang Anda inginkan!\nKetik SDM4 untuk Keluhan tim kerja\nKetik SDM5 untuk Penerapan denda\nKetik SDM6 untuk Indikasi fraud di cabang\nKetik SDM7 untuk Keluhan divisi kantor pusat"
+                        },
+                        "Lain-lain": {
+                            "id": "Lain-lain",
+                            "name": "Lain-lain",
+                            "type": "text",
+                            "followup": true,
+                            "message": "Silakan ketik pilihan di bawah ini untuk memilih kategori yang Anda inginkan!\nKetik SDM8 untuk Keluhan mengenai brankas\nKetik SDM9 untuk Nama kadiv lampiran TTD memo\nKetik SDM10 untuk Keluhan terkait gathering\nKetik SDM11 untuk Ketentuan piket cabang\nKetik SDM12 untuk Keluhan terkait resign\nKetik SDM13 untuk Ketentuan cuti\nKetik SDM14 untuk PIC pembuatan rekening BRI"
+                        }
+                    }
+                }
+            }
+        },
+        "Tentang Aplikasi": {
+            "id": "Tentang Aplikasi",
+            "name": "Tentang Aplikasi",
+            "type": "options",
+            "message": "Silakan pilih aplikasi di bawah ini!",
+            "options": [
+                {
+                    "label": "Mekaar Digi",
+                    "value": "Mekaar Digi",
+                    "next": "Mekaar Digi"
+                },
+                {
+                    "label": "PNM Digi",
+                    "value": "PNM Digi",
+                    "next": "PNM Digi"
+                },
+                {
+                    "label": "Br.Net",
+                    "value": "Br.Net",
+                    "next": "Br.Net"
+                }
+            ],
+            "children": {
+                "Mekaar Digi": {
+                    "id": "Mekaar Digi",
+                    "name": "Mekaar Digi",
+                    "type": "text",
+                    "followup": true,
+                    "message": "Jika teman-teman mempunyai pertanyaan dan kendala terkait Mekaar Digi dapat langsung disampaikan kepada Helpdesk Mekaar Digi di Nomor berikut :\n081381600361 ( Helpdesk Mekaar Digi ).\n\nAtau silakan ketik pertanyaan Anda terkait aplikasi Mekaar Digi:"
+                },
+                "PNM Digi": {
+                    "id": "PNM Digi",
+                    "name": "PNM Digi",
+                    "type": "text",
+                    "followup": true,
+                    "message": "Jika teman-teman mempunyai pertanyaan dan kendala terkait PNM Digi dapat langsung disampaikan kepada Helpdesk PNM Digi di Nomor berikut :\n081381600361 ( Helpdesk PNM Digi ).\n\nAtau silakan ketik pertanyaan Anda terkait aplikasi PNM Digi:"
+                },
+                "Br.Net": {
+                    "id": "Br.Net",
+                    "name": "Br.Net",
+                    "type": "text",
+                    "followup": true,
+                    "message": "Jika teman-teman mempunyai pertanyaan dan kendala terkait Br.Net dapat langsung disampaikan kepada Helpdesk Br.Net di Nomor berikut :\n081381600361 ( Helpdesk Br.Net ).\n\nAtau silakan ketik pertanyaan Anda terkait aplikasi Br.Net:"
+                }
+            }
+        },
+        "Masa Sewa Motor": {
+            "id": "Masa Sewa Motor",
+            "name": "Masa Sewa Motor",
+            "type": "text",
+            "followup": true,
+            "message": "Untuk masa sewa motor, silakan hubungi petugas."
+        },
+        "Cek Pasang Internet": {
+            "id": "Cek Pasang Internet",
+            "name": "Cek Pasang Internet",
+            "type": "text",
+            "followup": true,
+            "message": "Silakan masukkan alamat lengkap untuk cek ketersediaan."
+        },
+        "Isi Kuota Internet": {
+            "id": "Isi Kuota Internet",
+            "name": "Isi Kuota Internet",
+            "type": "text",
+            "followup": true,
+            "message": "Pilih provider dan paket untuk isi ulang."
+        }
+    }
 }

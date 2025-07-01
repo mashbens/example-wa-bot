@@ -33,34 +33,32 @@ func main() {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
-	// ✅ Load menu dari file JSON
+	// ✅ Load menu JSON
 	var err error
 	menuService, err = service.NewMenuService("menu/menus.json")
 	if err != nil {
 		panic(fmt.Errorf("gagal memuat menu: %v", err))
 	}
 
-	// ✅ Buat database untuk menyimpan sesi login
+	// ✅ Setup DB session WhatsApp
 	dbLog := waLog.Stdout("Database", "INFO", true)
 	container, err := sqlstore.New(ctx, "sqlite3", "file:store.db?_foreign_keys=on", dbLog)
 	if err != nil {
 		panic(fmt.Errorf("gagal membuat store: %v", err))
 	}
 
-	// ✅ Ambil device WhatsApp pertama dari database
 	deviceStore, err := container.GetFirstDevice(ctx)
 	if err != nil {
 		panic(fmt.Errorf("tidak ditemukan device: %v", err))
 	}
 
-	// ✅ Buat client WhatsApp
+	// ✅ Inisialisasi client WhatsApp
 	clientLog := waLog.Stdout("Client", "INFO", true)
 	client = whatsmeow.NewClient(deviceStore, clientLog)
 
-	// ✅ Event handler untuk pesan masuk
 	client.AddEventHandler(eventHandler)
 
-	// ✅ Login dengan QR Code jika belum pernah login
+	// ✅ QR Login jika belum login
 	if client.Store.ID == nil {
 		fmt.Println("QR CODE dibutuhkan. Silakan scan:")
 		qrChan, _ := client.GetQRChannel(ctx)
@@ -68,7 +66,6 @@ func main() {
 		if err != nil {
 			panic(fmt.Errorf("gagal connect: %v", err))
 		}
-
 		for evt := range qrChan {
 			if evt.Event == "code" {
 				qrterminal.GenerateHalfBlock(evt.Code, qrterminal.L, os.Stdout)
@@ -86,13 +83,12 @@ func main() {
 		}
 	}
 
-	// ✅ Jalankan terus sampai ditekan CTRL+C
-	fmt.Println("Bot berjalan. Tekan CTRL+C untuk keluar.")
+	fmt.Println("🤖 Bot berjalan. Tekan CTRL+C untuk keluar.")
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, os.Interrupt, syscall.SIGTERM)
 	<-c
 
-	fmt.Println("\nMematikan bot...")
+	fmt.Println("\n📴 Mematikan bot...")
 	client.Disconnect()
 }
 
@@ -101,11 +97,11 @@ func eventHandler(evt interface{}) {
 	case *events.Message:
 		handleMessage(v)
 	case *events.Connected:
-		fmt.Println("Connected to WhatsApp")
+		fmt.Println("✅ Terhubung ke WhatsApp")
 	case *events.Disconnected:
-		fmt.Println("Disconnected from WhatsApp")
+		fmt.Println("⚠️ Terputus dari WhatsApp")
 	case *events.LoggedOut:
-		fmt.Println("Logged out from WhatsApp")
+		fmt.Println("🚪 Logout dari WhatsApp")
 		os.Exit(1)
 	}
 }
@@ -142,6 +138,6 @@ func handleMessage(v *events.Message) {
 		Conversation: ptr(resp),
 	})
 	if err != nil {
-		fmt.Printf("Gagal kirim pesan ke %s: %v\n", userJID, err)
+		fmt.Printf("❌ Gagal kirim pesan ke %s: %v\n", userJID, err)
 	}
 }
